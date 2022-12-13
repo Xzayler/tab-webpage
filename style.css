@@ -47,4 +47,22 @@ table {
 	border-spacing: 0;
 }
 
+
+
+
 /* End Meyers Reset */
+
+:root {
+  box-sizing: border-box;
+}
+
+/* System Fonts */
+body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+/* Fluid font-size */
+/* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
+
+
