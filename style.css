@@ -189,7 +189,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 10px;
+  padding-bottom: 14px;
 
 }
 
@@ -227,7 +227,7 @@ nav {
   top:0px;
   border-radius: 8px 8px 0 0;
   /* box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.5); */
-  padding-bottom: 2px;
+  padding-bottom: 4px;
   transition: all 0.25s;
 }
 
