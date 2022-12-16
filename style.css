@@ -90,7 +90,7 @@ main {
   flex-wrap: wrap;
   padding: 48px calc(30px + 6vw);
   gap: 16px;
-  background-color: var(--clr-light-primary);
+  /* background-color: var(--clr-light-primary); */
 }
 
 
@@ -121,10 +121,10 @@ main {
 }
 
 .text p {
-  font-size: clamp(0.875rem, 0.625rem + 1.25vw, 1.625rem);
+  font-size: clamp(1.125rem, 0.9583rem + 0.8333vw, 1.625rem);
 }
 
-.data {
+/* .data {
   flex: 1 0 48%;
   margin: auto;
   display: flex;
@@ -149,7 +149,7 @@ main {
   height: 10px;
   margin-right: 4px;
   border-radius: 50%;
-}
+} */
 
 /* ###########
 Clickable Tabs
@@ -162,6 +162,9 @@ input {
 nav {
   width: 100%;
   display: flex;
+  border-radius: 8px 8px 0 0;
+  /* clip-path: fill-box; */
+  /* margin-bottom: -10px; */
 }
 
 .tab-label {
@@ -170,20 +173,75 @@ nav {
 }
 
 .svg {
-  border: 1px solid black;
-  aspect-ratio: calc(4/2);
-  display: block;
+  /* border: 1px solid red; */
   width: 100%;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5) inset;
+  position: relative;
+  top:10px;
+  transition: all 0.25s;
+}
+
+.svg {
+  text-align: center;
+  width: 100%;
+  aspect-ratio: calc(3/2);
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 10px;
+
+}
+
+[for='land']>.svg {
+  background-color: rgb(141, 76, 18);
 }
 
 
-/* Tab Content */
+[for='water']>.svg {
+  background-color: rgb(7, 149, 225);
+}
+
+[for='climate']>.svg {
+  background-color: skyblue;
+}
+
+[for='animals']>.svg {
+  background-color: rgb(229, 158, 26);
+}
+
+[for='substitution']>.svg {
+  background-color: #0A8754;
+}
+
+[for='land']:hover>.svg,
+#land:checked ~ nav [for='land']>.svg,
+[for='water']:hover>.svg,
+#water:checked ~ nav [for='water']>.svg,
+[for='climate']:hover>.svg,
+#climate:checked ~ nav [for='climate']>.svg,
+[for='animals']:hover>.svg,
+#animals:checked ~ nav [for='animals']>.svg,
+[for='substitution']:hover>.svg,
+#substitution:checked ~ nav [for='substitution']>.svg {
+  top:0px;
+  border-radius: 8px 8px 0 0;
+  /* box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.5); */
+  padding-bottom: 2px;
+  transition: all 0.25s;
+}
+
+/* ########
+Tab Content
+########### */
 
 .topic {
   min-height: 400px;
   width: 100vw;
+  margin-top: 0px;
 
   display: none;
+  z-index: 2;
 }
 
 .land {
