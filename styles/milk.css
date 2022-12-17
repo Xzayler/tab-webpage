@@ -248,11 +248,32 @@ Tab Content
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ####
 Sources
 #### */
 
-.sources {
+/* .sources {
   position: absolute;
   display: flex;
   top: 0;
@@ -269,6 +290,7 @@ Sources
 
 .source-label {
   position: relative;
+  border: 1px solid black;
 }
 
 .source-label>div {
@@ -278,13 +300,14 @@ Sources
   height: 16px;
   rotate: 45deg;
   transition: rotate 0.2s;
+  margin-top: 0;
 }
 
 #land-source:checked ~ .sources{
-  left: 50%;
+  left: 10px;
   transition: left 1s;
 }
 #land-source:checked ~ .sources>label>div {
   rotate: -135deg;
   transition: rotate 0.2s;
-}
+} */
