@@ -69,7 +69,7 @@ button {
 
 /* System Fonts */
 body {
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Helvetica, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -81,8 +81,8 @@ main {
 
 :root {
   --clr-accent: #27A1EE;
-  --clr-light-primary: #0A8754;
-  --clr-dark-primary: #004F2D;
+  --clr-light-primary: #0a8755;
+  --clr-dark-primary: #004f2d;
   --petition-progress: calc((773 / 14805)*100%)
 }
 
@@ -91,8 +91,12 @@ main {
 Header
 #### */
 
-header * {
-  /* border: 1px solid black; */
+header {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;
 }
 
 header {
@@ -101,6 +105,7 @@ header {
   padding: 12px 16px;
   font-weight: 600;
   font-size: clamp(0.875rem, 0.6607rem + 1.0714vw, 1.625rem);
+  
 }
 
 header>nav{
@@ -191,11 +196,17 @@ header>nav{
 Hero
 #### */
 
+.hero {
+  margin-bottom: -2px;
+  padding: 0;
+}
+
 .hero img{
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
   object-position: 0 38%;
+  margin: 0;
 
 }
 
@@ -203,23 +214,30 @@ Hero
 Current Campaign
 ############# */
 
+.feature {
+  background-color: var(--clr-dark-primary);
+  margin: 0;
+  padding: clamp(2rem, 1.4286rem + 2.8571vw, 4rem) 0;
+  color: #f3f3f3;
+}
+
 .feature h2 {
   font-weight: 800;
   font-size: clamp(1.5rem, 1.0714rem + 2.1429vw, 3rem);
   text-align: center;
-  margin: 64px auto 32px auto;
+  margin: 0 auto 32px auto;
 }
 
-.petition {
+.feature p {
   text-align: center;
   margin-bottom: 12px;
   font-size: clamp(1.125rem, 0.875rem + 1.25vw, 2rem);
 }
 
 .progress {
-  height: 10px;
+  height: 16px;
   background-color: grey;
-  margin: 0 calc(20% - 20px);
+  margin: 24px calc(20% - 20px);
   border-radius: 20px;
   overflow: hidden;
 }
@@ -228,4 +246,86 @@ Current Campaign
   height: 100%;
   width: var(--petition-progress);
   background-color: #0A8754;
+}
+
+.feature a {
+  color: var(--clr-accent);
+  font-size: clamp(1.5rem, 1.0714rem + 2.1429vw, 3rem);
+  transition: transform 0.5s;
+}
+
+.feature a:hover {
+  transform: scale(1.1);
+  /* transition: transform 0.5s; */
+  color: black;
+}
+
+/* ####
+Topics
+#### */
+
+.topics {
+  padding: 64px 16px;
+}
+
+.topic {
+  display: flex;
+  gap: 5%;
+  align-items: center;
+}
+
+.topic .text {
+  flex: 1 0 50%;
+}
+
+.topic .text h3{
+  font-size: clamp(1.125rem, 0.875rem + 1.25vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.topic .text p {
+  font-size: clamp(0.75rem, 0.6429rem + 0.5357vw, 1.125rem);
+}
+
+.topic .img-container  {
+  flex-grow: 1 0  50%;
+  filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+}
+
+.topic .img-container>img {
+  clip-path: url(#topicClip);
+  width: 100%;
+}
+
+.topic button {
+  padding: 6px;
+  border-radius: 6px;
+  font-size: clamp(0.75rem, 0.6429rem + 0.5357vw, 1.125rem);
+  font-weight: 500;
+  margin-top: 12px;
+  float: right;
+
+  background-color: var(--clr-accent);
+  color: #f3f3f3;
+  border: 1px solid var(--clr-dark-primary);
+
+  /* transition: background-color 2s;
+  transition: color 0.25s */
+}
+
+.topic button {
+  background-color: var(--clr-accent);
+  color: #f3f3f3;
+  transition: all 0.25s;
+}
+
+.topic button:hover {
+  background-color: #f3f3f3;
+  color: var(--clr-accent);
+  transition: all 2s;
+}
+
+.topic:nth-of-type(2) button {
+  float: left;
 }
